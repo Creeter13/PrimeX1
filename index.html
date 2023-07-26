@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz sobre Antes</title>
+</head>
+<body>
+  <h1>Quiz sobre Antes</h1>
+  <div id="quiz-container">
+    <!-- Pergunta 1 -->
+    <div class="question">
+      <h2>Pergunta 1: [Insira sua pergunta aqui]</h2>
+      <input type="radio" name="q1" value="resposta1"> Resposta 1<br>
+      <input type="radio" name="q1" value="resposta2"> Resposta 2<br>
+      <input type="radio" name="q1" value="resposta3"> Resposta 3<br>
+    </div>
+
+    <!-- Adicione outras 19 perguntas seguindo o mesmo padrão -->
+    <!-- Certifique-se de mudar os valores das perguntas e respostas para cada uma -->
+    
+  </div>
+
+  <button onclick="submitQuiz()">Enviar Respostas</button>
+
+  <script>
+    function submitQuiz() {
+      // Obtenha todas as respostas selecionadas pelo usuário
+      const answers = [];
+      const questions = document.querySelectorAll('.question');
+      questions.forEach((question) => {
+        const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+        if (selectedAnswer) {
+          answers.push(selectedAnswer.value);
+        }
+      });
+
+      // Verifique as respostas e conte quantas estão corretas
+      let score = 0;
+      answers.forEach((answer) => {
+        // Adicione aqui a lógica para verificar se a resposta está correta ou não
+        // Por exemplo:
+        // if (answer === "resposta_correta") {
+        //   score++;
+        // }
+      });
+
+      // Exiba o resultado
+      alert(`Você acertou ${score} de 20 perguntas!`);
+    }
+  </script>
+</body>
+</html>
